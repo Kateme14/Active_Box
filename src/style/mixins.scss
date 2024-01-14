@@ -1,0 +1,29 @@
+@mixin container(){
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+@mixin btn(){
+    border: 2px solid #FF4343;
+    background: #FF4343;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 28px;
+    text-transform: uppercase;
+    padding: 23px 17px;
+    max-width: 370px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    @media only screen and (max-width: 1024px){
+        max-width: 314px;
+    }
+    @media only screen and (max-width: 768px){
+        max-width: 280px;
+        padding: 15px;
+    }
+}
