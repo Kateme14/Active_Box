@@ -1,9 +1,6 @@
 @import "reset";
 @import 'mixins';
 
-.container{
-    @include container();
-}
 
 .background-img__wrapper{
     background-image: url(/src/assets/bg.png);
@@ -14,27 +11,49 @@
 
 .header{
     padding: 38px 0 35px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
 
     &__container{
+        @include container();
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: relative;
 
-        &::after{
+        // &::after{
+        //     content: "";
+        //     width: 134px;
+        //     height: 4px;
+        //     display: block;
+        //     background-color: #BABBC5;
+        //     position: absolute;
+        //     left: 50%;
+        //     top:100%;
+        //     transform: translate(-50%, 32px);
+        //     @media only screen and (max-width: 767px){
+        //         display: none;
+        //     }
+        // }
+
+        &::before{
             content: "";
-            width: 134px;
-            height: 4px;
-            display: block;
+            width: calc(100% - 30px);
+            height: 1px;
             background-color: #BABBC5;
             position: absolute;
-            left: 50%;
-            top:100%;
-            transform: translate(-50%, 32px);
+            transform: translate(15px, 62px);
+            left: 0;
+            top: 0;
             @media only screen and (max-width: 767px){
                 display: none;
             }
         }
+
+
     }
 
     &__logo-wrapper{
@@ -54,9 +73,11 @@
         flex-wrap: wrap;
         justify-content: space-around;
         list-style-type: none;
-        column-gap: 60px; 
+        column-gap: 66px; 
+        margin-right: 28px;
         @media only screen and (max-width: 1024px){
             column-gap: 50px;
+            margin-right: 24px;
         }
         @media only screen and (max-width: 767px){
             display: none;
@@ -71,11 +92,29 @@
             line-height: 15px;
             text-transform: uppercase;
             text-decoration: none;
+            position: relative;
             @media only screen and (max-width:1024px){
                 font-size: 12px;
             }
             &:hover{
                 color: #6aa1c3;
+                &::after{
+                    content: "";
+                    width: 134px;
+                    height: 4px;
+                    display: block;
+                    background-color: #BABBC5;
+                    position: absolute;
+                    left: 50%;
+                    top:100%;
+                    transform: translate(-50%, 36px);
+                    @media only screen and (max-width: 1024px){
+                        width: 119px;
+                    }
+                    @media only screen and (max-width: 767px){
+                        display: none;
+                    }
+                }
             }
             &:active{
                 color: #2d5282;
@@ -97,32 +136,20 @@
     }
 }
 
-
 .banner{
-    padding: 130px 0 120px;
+    padding: 232px 0 120px;
     margin-bottom: 116px;
     @media only screen and (max-width: 1024px){
-        padding: 157px 0 126px;
+        padding: 257px 0 126px;
     }
     @media only screen and (max-width: 767px){
-        padding: 50px 0 52px;
+        padding: 106px 0 52px;
     }
 
-    &__container::before{
-        content: "";
-        width: 1170px;
-        height: 1px;
-        background-color: #BABBC5;
-        position: absolute;
-        transform: translateY(-130px);
-        @media only screen and (max-width: 1024px){
-            transform: translateY(-157px);
-        }
-        @media only screen and (max-width: 767px){
-            display: none;
-        }
+    .banner__container{
+        @include container();
     }
-    
+
     &__template{
         margin: 0 auto;
         max-width: 999px;
