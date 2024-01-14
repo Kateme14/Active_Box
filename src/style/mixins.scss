@@ -35,4 +35,18 @@
     }
 }
 
+@mixin font($color, $textAlign, $fontSize, $fontWeigth, $lineHeight){
+    color: $color;
+    text-align: $textAlign;
+    font-size: $fontSize;
+    font-weight: $fontWeigth;
+    line-height: $lineHeight;
+}
 
+@mixin font-main{
+    font-family: 'Raleway', sans-serif;
+}
+
+@mixin font-secondary{
+    font-family: 'Cardo', serif;
+}
