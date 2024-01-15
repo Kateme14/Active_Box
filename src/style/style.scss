@@ -1,21 +1,14 @@
 @import "reset";
 @import 'mixins';
 
-
-.background-img__wrapper{
-    background-image: url(/src/assets/bg.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
 .header{
-    padding: 38px 0 35px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-
+    @media only screen and (max-width: 767px){
+        padding: 19px 0;
+    }
 
     &__container{
         @include container();
@@ -24,30 +17,14 @@
         align-items: center;
         position: relative;
 
-        // &::after{
-        //     content: "";
-        //     width: 134px;
-        //     height: 4px;
-        //     display: block;
-        //     background-color: #BABBC5;
-        //     position: absolute;
-        //     left: 50%;
-        //     top:100%;
-        //     transform: translate(-50%, 32px);
-        //     @media only screen and (max-width: 767px){
-        //         display: none;
-        //     }
-        // }
-
         &::before{
             content: "";
             width: calc(100% - 30px);
             height: 1px;
             background-color: #BABBC5;
             position: absolute;
-            transform: translate(15px, 62px);
-            left: 0;
-            top: 0;
+            left: 15px;
+            bottom: 0;
             @media only screen and (max-width: 767px){
                 display: none;
             }
@@ -62,10 +39,11 @@
             width: 103px;
             height: 15px;
         }
-        .header__logo{
-            width: 100%;
-            height: 100%;
-        }
+    }
+
+    &__logo{
+        width: 100%;
+        height: 100%;
     }
 
     &__list{
@@ -73,52 +51,47 @@
         flex-wrap: wrap;
         justify-content: space-around;
         list-style-type: none;
-        column-gap: 66px; 
-        margin-right: 28px;
-        @media only screen and (max-width: 1024px){
-            column-gap: 50px;
-            margin-right: 24px;
-        }
+        column-gap: 5px; 
         @media only screen and (max-width: 767px){
             display: none;
         }
+    }
 
-        .header__link{
-            color: #FFF;
-            text-align: center;
-            font-family: 'Raleway', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            line-height: 15px;
-            text-transform: uppercase;
-            text-decoration: none;
-            position: relative;
-            @media only screen and (max-width:1024px){
-                font-size: 12px;
-            }
-            &:hover{
-                color: #6aa1c3;
-                &::after{
-                    content: "";
-                    width: 134px;
-                    height: 4px;
-                    display: block;
-                    background-color: #BABBC5;
-                    position: absolute;
-                    left: 50%;
-                    top:100%;
-                    transform: translate(-50%, 36px);
-                    @media only screen and (max-width: 1024px){
-                        width: 119px;
-                    }
-                    @media only screen and (max-width: 767px){
-                        display: none;
-                    }
+    &__link{
+        color: #FFF;
+        text-align: center;
+        font-family: 'Raleway', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 15px;
+        text-transform: uppercase;
+        text-decoration: none;
+        position: relative;
+        display: block;
+        min-width: 129px;
+        padding: 36px 0;
+        @media only screen and (max-width:1024px){
+            font-size: 12px;
+            min-width: 103px;
+        }
+        &:hover{
+            color: #6aa1c3;
+            &::after{
+                content: "";
+                width: 100%;
+                height: 4px;
+                display: block;
+                background-color: #BABBC5;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                @media only screen and (max-width: 767px){
+                    display: none;
                 }
             }
-            &:active{
-                color: #2d5282;
-            }
+        }
+        &:active{
+            color: #2d5282;
         }
     }
 
@@ -139,6 +112,10 @@
 .banner{
     padding: 232px 0 120px;
     margin-bottom: 116px;
+    background-image: url(/src/assets/bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     @media only screen and (max-width: 1024px){
         padding: 257px 0 126px;
     }
@@ -146,57 +123,46 @@
         padding: 106px 0 52px;
     }
 
-    .banner__container{
+    &__container{
         @include container();
     }
 
-    &__template{
-        margin: 0 auto;
-        max-width: 999px;
+    &__title{
+        @include font(#FFF, center, 64px, 900, 75px);
+        @include font-main;
+        text-transform: uppercase;
+        margin-bottom: 32px;
         @media only screen and (max-width: 1024px){
-        max-width: 749px;
+            font-size: 48px;
+            margin-bottom: 62px;
+            line-height: 56px;
         }
         @media only screen and (max-width: 767px){
-            max-width: 280px;
-            }
+            font-size: 36px;
+            margin-bottom: 32px;
+            line-height: 42px;
+        }
+    }
 
-            .banner__title{
-                @include font(#FFF, center, 64px, 900, 75px);
-                @include font-main;
-                max-width: 1170px;
-                text-transform: uppercase;
-                margin-bottom: 32px;
-                @media only screen and (max-width: 1024px){
-                    font-size: 48px;
-                    margin-bottom: 62px;
-                    line-height: 56px;
-                }
-                @media only screen and (max-width: 767px){
-                    font-size: 36px;
-                    margin-bottom: 32px;
-                    line-height: 42px;
-                }
+    &__text{
+            @include font(#FFF, center, 24px, 400, 28px);
+            @include font-main;
+            max-width: 999px;
+            margin: 0 auto 82px;
+            @media only screen and (max-width: 1024px){
+                font-size: 18px;
+                margin-bottom: 89px;
+                line-height: 21px;
+                max-width: 749px;
             }
-
-            .banner__text{
-                @include font(#FFF, center, 24px, 400, 28px);
-                @include font-main;
-                max-width: 1170px;
-                margin-bottom: 82px;
-                @media only screen and (max-width: 1024px){
-                    font-size: 18px;
-                    margin-bottom: 89px;
-                    line-height: 21px;
-                }
-                @media only screen and (max-width: 767px){
-                    font-size: 14px;
-                    margin-bottom: 49px;
-                    line-height: 16px;
-                }
+            @media only screen and (max-width: 767px){
+                font-size: 14px;
+                margin: 0 auto 49px;
+                line-height: 16px;
             }
-            
-            .btn{
-                @include button;
-            }
+        }
+                
+.btn{
+        @include button;
     }
 }
