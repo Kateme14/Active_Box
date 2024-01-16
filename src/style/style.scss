@@ -1,5 +1,6 @@
 @import "reset";
 @import 'mixins';
+@import 'vars';
 
 .header{
     position: fixed;
@@ -21,7 +22,7 @@
             content: "";
             width: calc(100% - 30px);
             height: 1px;
-            background-color: #BABBC5;
+            background-color: $lineColor;
             position: absolute;
             left: 15px;
             bottom: 0;
@@ -57,7 +58,7 @@
     }
 
     &__link{
-        color: #FFF;
+        color: $mainText;
         text-align: center;
         font-family: 'Raleway', sans-serif;
         font-size: 13px;
@@ -74,13 +75,13 @@
             min-width: 103px;
         }
         &:hover{
-            color: #6aa1c3;
+            color: $linkHoverBlue;
             &::after{
                 content: "";
                 width: 100%;
                 height: 4px;
                 display: block;
-                background-color: #BABBC5;
+                background-color: $lineColor;
                 position: absolute;
                 left: 0;
                 bottom: 0;
@@ -90,7 +91,7 @@
             }
         }
         &:active{
-            color: #2d5282;
+            color: $linkActiveBlue;
         }
     }
 
@@ -127,7 +128,7 @@
     }
 
     &__title{
-        @include font(#FFF, center, 64px, 900, 75px);
+        @include font($mainText, center, 64px, 900, 75px);
         @include font-main;
         text-transform: uppercase;
         margin-bottom: 32px;
@@ -144,7 +145,7 @@
     }
 
     &__text{
-            @include font(#FFF, center, 24px, 400, 28px);
+            @include font($mainText, center, 24px, 400, 28px);
             @include font-main;
             max-width: 999px;
             margin: 0 auto 82px;
