@@ -1,0 +1,53 @@
+@mixin container(){
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+@mixin button(){
+    border: 2px solid $buttonColorMain;
+    background: $buttonColorMain;
+        &:active{
+            background: $buttonActive;
+            box-shadow: 4px 4px 30px 0px $buttonActive;
+                }
+        &:hover{
+            background: $buttonHover;
+                }
+    color: $mainText;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 28px;
+    text-transform: uppercase;
+    padding: 23px 17px;
+    max-width: 370px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    @media only screen and (max-width: 1024px){
+        max-width: 314px;
+    }
+    @media only screen and (max-width: 767px){
+        max-width: 100%;
+        padding: 15px;
+    }
+}
+
+@mixin font($color, $textAlign, $fontSize, $fontWeigth, $lineHeight){
+    color: $color;
+    text-align: $textAlign;
+    font-size: $fontSize;
+    font-weight: $fontWeigth;
+    line-height: $lineHeight;
+}
+
+@mixin font-main{
+    font-family: 'Raleway', sans-serif;
+}
+
+@mixin font-secondary{
+    font-family: 'Cardo', serif;
+}
