@@ -177,7 +177,7 @@
         }
     }
 
-     &__container{
+    &__container{
         @include container;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -213,17 +213,17 @@
     }
 
     &__title{
-            @include font($titleColorBlackGrey, center, 24px, 900, 28px);
-            @include font-main;
-            text-transform: uppercase;
-            margin-bottom: 42px;
-            @media only screen and (max-width: 1024px){
-                @include font($titleColorBlackGrey, center, 18px, 900, 21px);
-                margin-bottom: 23px;
-            }
-            @media only screen and (max-width: 767px){
-                margin-bottom: 8px;
-            }
+        @include font($titleColorBlackGrey, center, 24px, 900, 28px);
+        @include font-main;
+        text-transform: uppercase;
+        margin-bottom: 42px;
+        @media only screen and (max-width: 1024px){
+            @include font($titleColorBlackGrey, center, 18px, 900, 21px);
+            margin-bottom: 23px;
+        }
+        @media only screen and (max-width: 767px){
+            margin-bottom: 8px;
+        }
     }
 
     &__text{
