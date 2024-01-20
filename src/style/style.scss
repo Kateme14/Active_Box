@@ -118,9 +118,11 @@
     background-size: cover;
     @media only screen and (max-width: 1024px){
         padding: 257px 0 126px;
+        margin-bottom: 78px;
     }
     @media only screen and (max-width: 767px){
         padding: 106px 0 52px;
+        margin-bottom: 40px;
     }
 
     &__container{
@@ -163,5 +165,71 @@
         }                
 .btn{
         @include button;
+    }
+}
+
+.description{
+    margin-bottom: 116px;
+    @media only screen and (max-width: 1024px){
+        margin-bottom: 80px;
+    @media only screen and (max-width: 767px){
+        margin-bottom: 35px;
+        }
+    }
+
+     &__container{
+        @include container;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 88px 30px;
+        @media only screen and (max-width: 1024px){
+            gap: 50px 20px;
+        }
+        @media only screen and (max-width: 767px){
+            grid-template-columns: 100%;
+            row-gap: 41px;
+        }
+    }
+
+    &__icon-wrapper{
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 51px;
+        @media only screen and (max-width: 1024px){
+            width: 85px;
+            height: 85px;
+            margin-bottom: 44px;
+        }
+        @media only screen and (max-width: 767px){
+            width: 75px;
+            height: 75px;
+            margin-bottom: 37px;
+        }
+    }
+
+    &__icon{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__title{
+            @include font($titleColorBlackGrey, center, 24px, 900, 28px);
+            @include font-main;
+            text-transform: uppercase;
+            margin-bottom: 42px;
+            @media only screen and (max-width: 1024px){
+                @include font($titleColorBlackGrey, center, 18px, 900, 21px);
+                margin-bottom: 23px;
+            }
+            @media only screen and (max-width: 767px){
+                margin-bottom: 8px;
+            }
+    }
+
+    &__text{
+        @include font($textColorBlackGrey, center, 18px, 400, 21px);
+        @media only screen and (max-width: 1024px){
+            @include font($titleColorBlackGrey, center, 14px, 400, 16px);
+        }
     }
 }
