@@ -74,24 +74,32 @@
             font-size: 12px;
             min-width: 103px;
         }
-        &:hover{
-            // color: $linkHoverBlue;
-            &::after{
-                content: "";
-                width: 100%;
-                height: 4px;
-                display: block;
-                background-color: $lineColor;
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                @media only screen and (max-width: 767px){
-                    display: none;
-                }
+
+        &::after{
+            content: "";
+            width: 0%;
+            height: 4px;
+            display: block;
+            background-color: $lineColor;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            @media only screen and (max-width: 767px){
+                display: none;
             }
         }
+        
+        &:hover::after{
+            width: 100%;
+        }
+
         &:active{
             color: $linkActiveRed;
+        }
+
+        &:active::after{
+            width: 100%;
+            background-color: $linkActiveRed;
         }
     }
 
