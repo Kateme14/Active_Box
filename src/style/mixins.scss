@@ -7,7 +7,7 @@
 @mixin button(){
     border: 2px solid $buttonColorMain;
     background: $buttonColorMain;
-    transition: background .3s linear;
+    transition: all .2s linear;
         &:active{
             background: $buttonActive;
             box-shadow: 4px 4px 30px 0px $buttonActive;
