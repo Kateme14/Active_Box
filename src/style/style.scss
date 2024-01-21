@@ -75,7 +75,7 @@
             min-width: 103px;
         }
         &:hover{
-            color: $linkHoverBlue;
+            // color: $linkHoverBlue;
             &::after{
                 content: "";
                 width: 100%;
@@ -91,7 +91,7 @@
             }
         }
         &:active{
-            color: $linkActiveBlue;
+            color: $linkActiveRed;
         }
     }
 
@@ -186,7 +186,7 @@
             gap: 50px 20px;
         }
         @media only screen and (max-width: 767px){
-            grid-template-columns: 100%;
+            grid-template-columns: 1fr;
             row-gap: 41px;
         }
     }
