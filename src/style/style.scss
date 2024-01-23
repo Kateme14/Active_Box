@@ -72,10 +72,6 @@
                 text-align: left;
                 padding: 24px 0 24px 20px;
             }
-
-        //     .hamburger path{
-        //         fill: #464a9b;
-        //     }
         }
     }
 
@@ -97,24 +93,7 @@
             font-size: 12px;
             min-width: 103px;
         }
-
-        // &::after{
-        //     content: "";
-        //     width: 0%;
-        //     height: 4px;
-        //     display: block;
-        //     background-color: $lineColor;
-        //     position: absolute;
-        //     left: 0;
-        //     bottom: 0;
-        //     @media only screen and (max-width: 767px){
-        //         display: none;
-        //     }
-        // }
-        
-        // &:hover::after{
-        //     width: 100%;
-      
+   
         &::after{
             content: "";
             width: 0%;
@@ -134,14 +113,9 @@
             width: 100%;
         }
 
-        // &:hover{
-        //     color: $linkHoverBlue;
-        // }
-
-
-        // &:active{
-        //     color: $linkActiveRed;
-        // }
+        &:active{
+            color: $linkActiveRed;
+        }
 
         &:active::after{
             width: 100%;
