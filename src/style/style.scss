@@ -97,6 +97,23 @@
             font-size: 12px;
             min-width: 103px;
         }
+
+        // &::after{
+        //     content: "";
+        //     width: 0%;
+        //     height: 4px;
+        //     display: block;
+        //     background-color: $lineColor;
+        //     position: absolute;
+        //     left: 0;
+        //     bottom: 0;
+        //     @media only screen and (max-width: 767px){
+        //         display: none;
+        //     }
+        // }
+        
+        // &:hover::after{
+        //     width: 100%;
       
         &::after{
             content: "";
@@ -117,12 +134,18 @@
             width: 100%;
         }
 
-        &:hover{
-            color: $linkHoverBlue;
-        }
+        // &:hover{
+        //     color: $linkHoverBlue;
+        // }
 
-        &:active{
-            color: $linkActiveBlue;
+
+        // &:active{
+        //     color: $linkActiveRed;
+        // }
+
+        &:active::after{
+            width: 100%;
+            background-color: $linkActiveRed;
         }
     }
 
@@ -151,6 +174,7 @@
     }
 }
 
+
 .banner{
     padding: 232px 0 120px;
     margin-bottom: 116px;
@@ -160,9 +184,11 @@
     background-size: cover;
     @media only screen and (max-width: 1024px){
         padding: 257px 0 126px;
+        margin-bottom: 78px;
     }
     @media only screen and (max-width: 767px){
         padding: 106px 0 52px;
+        margin-bottom: 40px;
     }
 
     &__container{
@@ -209,6 +235,73 @@
         }                
 .btn{
         @include button;
+    }
+}
+
+.description{
+    margin-bottom: 116px;
+    @media only screen and (max-width: 1024px){
+        margin-bottom: 80px;
+    @media only screen and (max-width: 767px){
+        margin-bottom: 35px;
+        }
+    }
+
+    &__container{
+        @include container;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 88px 30px;
+        @media only screen and (max-width: 1024px){
+            gap: 50px 20px;
+        }
+        @media only screen and (max-width: 767px){
+            grid-template-columns: 1fr;
+            row-gap: 41px;
+        }
+    }
+
+    &__icon-wrapper{
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 51px;
+        @media only screen and (max-width: 1024px){
+            width: 85px;
+            height: 85px;
+            margin-bottom: 44px;
+        }
+        @media only screen and (max-width: 767px){
+            width: 75px;
+            height: 75px;
+            margin-bottom: 37px;
+        }
+    }
+
+    &__icon{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__title{
+        @include font($titleColorBlackGrey, center, 24px, 900, 28px);
+        @include font-main;
+        text-transform: uppercase;
+        margin-bottom: 42px;
+        @media only screen and (max-width: 1024px){
+            @include font($titleColorBlackGrey, center, 18px, 900, 21px);
+            margin-bottom: 23px;
+        }
+        @media only screen and (max-width: 767px){
+            margin-bottom: 8px;
+        }
+    }
+
+    &__text{
+        @include font($textColorBlackGrey, center, 18px, 400, 21px);
+        @include font-main;
+        @media only screen and (max-width: 1024px){
+            @include font($titleColorBlackGrey, center, 14px, 400, 16px);
+        }
     }
 }
 
@@ -284,7 +377,3 @@
         }
     }
 }
-
-
-
-    
