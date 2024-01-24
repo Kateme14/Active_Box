@@ -60,7 +60,9 @@
             display: block;
             position: fixed;
             left: 0;
-            top: 108px;
+            top: 0px;
+            padding: 108px 0;
+            z-index: 0;
             width: 100%;
             height: 100vh;
 
@@ -214,6 +216,7 @@
 
 .description{
     margin-bottom: 116px;
+    scroll-margin-top: 90px;
     @media only screen and (max-width: 1024px){
         margin-bottom: 80px;
     @media only screen and (max-width: 767px){
@@ -285,6 +288,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2px;
+    scroll-margin-top: 90px;
     @media only screen and (max-width: 767px){
         grid-template-columns: repeat(2, 1fr);
     }
@@ -351,3 +355,414 @@
         }
     }
 }
+
+.customers{
+    margin-bottom: 114px;
+    scroll-margin-top: 90px;
+    @media only screen and (max-width: 1024px){
+        margin-bottom: 78px;
+    }
+    @media only screen and (max-width: 767px){
+        margin-bottom: 41px;
+    }
+
+    &__container{
+        @include container ();
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 30px;
+        @media only screen and (max-width: 1024px){
+            column-gap: 25px;
+        }
+        @media only screen and (max-width: 767px){
+            grid-template-columns: 1fr;
+            row-gap: 56px;
+        }
+    }
+
+    &__image-wrapper{
+        margin-bottom: 30px;
+        @media only screen and (max-width: 1024px){
+            margin-bottom: 25px;
+        }
+    }
+
+    &__image-mobile{
+        object-fit: cover;
+        display: none;
+        @media only screen and (max-width: 767px){
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__image{
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        @media only screen and (max-width: 767px){
+            display: none;
+        }
+        
+    }
+
+    &__title{
+        @include font($blackText, left, 24px, 700, 28px);
+        @include font-main;
+        text-transform: capitalize;
+        margin-bottom: 6px;
+        @media only screen and (max-width: 1024px){
+            font-size: 18px;
+            line-height: 21px;
+            margin-bottom: 4px;
+        }
+    }
+
+    &__position{
+        @include font($buttonColorMain, left, 18px, 400, 21px);
+        @include font-main;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 22px;
+        }
+
+        @media only screen and (max-width: 767px){
+            margin-bottom: 38px;
+        }
+    }
+
+    &__text{
+        @include font($textColorBlackGrey, left, 18px, 400, 21px);
+        @include font-main;
+        margin-bottom: 38px;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 40px;
+        }
+        @media only screen and (max-width: 767px){
+            margin-bottom: 55px;
+        }
+    }
+
+    &__contacts{
+        display: flex;
+        justify-content: flex-start;
+        column-gap: 6px;
+    }
+
+    &__icon-wrapper{
+        display: flex;
+        cursor: pointer;
+        @media only screen and (max-width: 1024px){
+            width: 33px;
+            height: 33px;
+        }
+        @media only screen and (max-width: 767px){
+            width: 40px;
+            height: 40px;
+        }
+        &:hover path{
+            fill: $linkActiveRed;
+            transition: all .3s linear;
+        }
+
+        &:hover rect{
+            stroke: $linkActiveRed;
+            transition: all .3s linear;
+        }
+        
+    }
+
+    &__icon{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.quote{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 177px;
+    scroll-margin-top: 90px;
+    @media only screen and (max-width: 1024px){
+        margin-bottom: 111px;
+    }
+    @media only screen and (max-width: 767px){
+        margin-bottom: 67px;
+        grid-template-columns: 1fr;
+    }
+
+    &__image-wrapper{
+        position: relative;
+    }
+
+    &__image{
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        @media only screen and (max-width: 767px){
+            position: static;
+        }
+    }
+
+    &__text-wrapper{
+        background-color: #5C3249;
+        padding: 116px 170px 144px 129px;
+        @media only screen and (max-width: 1024px){
+            padding: 47px 104px 130px 88px;
+        }
+        @media only screen and (max-width: 767px){
+            padding: 23px 25px 95px 20px;
+        }
+    }
+
+    &__text{
+        @include font($mainText, left, 36px, 400, 49px);
+        @include font-secondary;
+        text-transform: capitalize;
+        font-style: italic;
+        padding-bottom: 24px;
+        @media only screen and (max-width: 1024px){
+            font-size: 24px;
+            line-height: 32px;
+        }
+        @media only screen and (max-width: 767px){
+            text-align: center;
+        }
+    }
+
+    &__author{
+        @include font($mainText, left, 13px, 700, 15px);
+        @include font-main;
+        text-transform: uppercase;
+        @media only screen and (max-width: 1024px){
+            font-size: 12px;
+            line-height: 14px;
+        }
+        @media only screen and (max-width: 767px){
+            text-align: center;
+        }
+    }
+}
+
+.download{
+    margin-bottom: 114px;
+    scroll-margin-top: 90px;
+    @media only screen and (max-width: 1024px){
+        margin-bottom: 78px;
+    }
+    @media only screen and (max-width: 767px){
+        margin-bottom: 45px;
+    }
+
+    &__container{
+        @include container;
+    }
+
+    &__title{
+        @include font($blackText, center, 30px, 500, 35px);
+        @include font-main;
+        text-transform: capitalize;
+        margin-bottom: 23px;
+        @media only screen and (max-width: 1024px){
+            font-size: 24px;
+            line-height: 28px;
+            margin-bottom: 20px;
+        }
+        @media only screen and (max-width: 767px){
+            font-size: 18px;
+            line-height: 21px;
+            margin-bottom: 22px;
+        }
+    }
+
+    &__text{
+        @include font($blackText, center, 18px, 700, 21px);
+        @include font-main;
+        text-transform: uppercase;
+        margin-bottom: 48px;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 43px;
+        }
+        @media only screen and (max-width: 767px){
+            font-size: 13px;
+            line-height: 15px;
+            margin-bottom: 11px;
+        }
+    }
+
+    &__btn{
+        @include button;
+        @media only screen and (max-width: 767px){
+            font-size: 18px;
+            padding: 30px 17px;
+        }
+    }
+}
+
+.info{
+    background-color: $backgroundColor;
+    padding: 71px 0;
+    @media only screen and (max-width: 1024px){
+        padding: 46px 0 43px;
+    }
+    @media only screen and (max-width: 767px){
+        padding: 34px 0;
+    }
+
+    &__container{
+        @include container;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 30px;
+        @media only screen and (max-width: 1024px){
+            column-gap: 20px;
+        }
+
+        @media only screen and (max-width: 767px){
+        grid-template-columns: 1fr;
+        row-gap: 59px;
+        }
+    }
+
+    &__location{
+        @include font($mainText, center, 18px, 700, 21px);
+        @include font-main;
+        text-transform: uppercase;
+        margin-bottom: 29px;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 17px;
+        }
+
+        @media only screen and (max-width: 767px){
+            margin-bottom: 34px;
+        }
+    }
+
+    &__address{
+        @include font($mainText, center, 18px, 400, 21px);
+        @include font-main;
+        text-transform: capitalize;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+
+    &__share{
+        @include font($mainText, center, 18px, 700, 21px);
+        @include font-main;
+        text-transform: uppercase;
+        margin-bottom: 49px;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 32px;
+        }
+        @media only screen and (max-width: 767px){
+            margin-bottom: 36px;
+        }
+    }
+
+    &__icons{
+        display: flex;
+        justify-content: center;
+        column-gap: 27px;
+        @media only screen and (max-width: 1024px){
+            column-gap: 21px;
+        }
+        @media only screen and (max-width: 767px){
+            column-gap: 17px;
+        }
+    }
+
+    &__icon-wrapper{
+        display: flex;
+        cursor: pointer;
+        @media only screen and (max-width: 1024px){
+            max-width: 33px;
+            max-height: 33px;
+        }
+        &:hover path{
+            fill: $linkActiveRed;
+            transition: all .3s linear;
+        }
+
+        &:hover rect{
+            stroke: $linkActiveRed;
+            transition: all .3s linear;
+        }
+    }
+
+    &__icon{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__about-us-title{
+        @include font($mainText, center, 18px, 700, 21px);
+        @include font-main;
+        text-transform: uppercase;
+        margin-bottom: 29px;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 15px;
+        }
+        @media only screen and (max-width: 767px){
+            margin-bottom: 38px;
+        }
+    }
+
+    &__about-us-text{
+        @include font($mainText, center, 18px, 400, 21px);
+        @include font-main;
+        text-transform: capitalize;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+}
+
+.footer{
+    background-color: #2C3154;
+    padding: 24px 0;
+    @media only screen and (max-width: 1024px){
+        padding: 14px 0;
+    }
+
+    &__container{
+        @include container;
+    }
+
+    &__text{
+        @include font($footerText, center, 18px, 400, 21px);
+        @include font-main;
+        text-transform: capitalize;
+        max-width: 370px;
+        margin: 0 auto;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+            max-width: 314px;
+        }
+    }
+
+    &__author{
+        color: $mainText;
+    }
+}
+
