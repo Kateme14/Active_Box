@@ -6,12 +6,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Raleway:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
     <link rel="stylesheet" href="style/style.scss">
     <title>Active_Box</title>
 </head>
 <body>
     <header class="header">
-         <div class="header__container">
+         <div class="header__container scrolled__container">
             <a href="#" class="header__logo-wrapper">                    
                 <svg class="header__logo" xmlns="http://www.w3.org/2000/svg" width="184" height="27" viewBox="0 0 184 27" fill="none">
                     <path d="M16.0136 21.0865H7.81939L6.38839 25.7644H0L9.09706 0.723712H14.7188L23.884 25.7644H17.4616L16.0136 21.0865ZM9.25038 16.4257H14.5826L11.908 7.74061L9.25038 16.4257Z" fill="#656980"/>
@@ -303,14 +307,55 @@
                 </div>
             </div>
         </div>
-        <div id="quote" class="quote">
-            <div class="quote__image-wrapper">
-                <img src="/src/assets/quote.jpg" alt="" class="quote__image">
+        <div id="quote" class="quote swiper swiperQuote">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide quote__container">
+                    <div class="quote__image-wrapper">
+                        <img src="/src/assets/quote.jpg" alt="" class="quote__image">
+                    </div>
+                    <div class="quote__text-wrapper">
+                        <h2 class="quote__header">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</h2>
+                        <p class="quote__text">Susan Sims, Interaction Designer at XYZ</p>
+                    </div>
+                </div>
+                <div class="swiper-slide quote__container">
+                    <div class="quote__image-wrapper">
+                        <img src="/src/assets/quote.jpg" alt="" class="quote__image">
+                    </div>
+                    <div class="quote__text-wrapper">
+                        <h2 class="quote__header">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</h2>
+                        <p class="quote__text">Susan Sims, Interaction Designer at XYZ</p>
+                    </div>
+                </div>
+                <div class="swiper-slide quote__container">
+                    <div class="quote__image-wrapper">
+                        <img src="/src/assets/quote.jpg" alt="" class="quote__image">
+                    </div>
+                    <div class="quote__text-wrapper">
+                        <h2 class="quote__header">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</h2>
+                        <p class="quote__text">Susan Sims, Interaction Designer at XYZ</p>
+                    </div>
+                </div>
+                <div class="swiper-slide quote__container">
+                    <div class="quote__image-wrapper">
+                        <img src="/src/assets/quote.jpg" alt="" class="quote__image">
+                    </div>
+                    <div class="quote__text-wrapper">
+                        <h2 class="quote__header">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</h2>
+                        <p class="quote__text">Susan Sims, Interaction Designer at XYZ</p>
+                    </div>
+                </div>
+                <div class="swiper-slide quote__container">
+                    <div class="quote__image-wrapper">
+                        <img src="/src/assets/quote.jpg" alt="" class="quote__image">
+                    </div>
+                    <div class="quote__text-wrapper">
+                        <h2 class="quote__header">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</h2>
+                        <p class="quote__text">Susan Sims, Interaction Designer at XYZ</p>
+                    </div>
+                </div>
             </div>
-            <div class="quote__text-wrapper">
-                <p class="quote__text">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</p>
-                <p class="quote__author">Susan Sims, Interaction Designer at XYZ</p>
-            </div>
+            <div class="swiper-pagination"></div>
         </div>
         <div id="download" class="download">
             <div class="download__container">
@@ -359,6 +404,7 @@
                 <p class="footer__text">Copyright © 2015 ActiveBox. All Rights Reserved Made with <span class="footer__author">by Kamal Chaneman</span></p>
             </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="/src/assets/scripts/script.js"></script>
 </body>
 </html>
