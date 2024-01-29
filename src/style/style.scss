@@ -38,6 +38,8 @@
         @media only screen and (max-width: 767px){
             width: 103px;
             height: 15px;
+            position: relative;
+            z-index: 1;
         }
     }
 
@@ -52,17 +54,27 @@
         justify-content: space-around;
         list-style-type: none;
         column-gap: 5px; 
+        transition: 0.6s ease-in-out;
         @media only screen and (max-width: 767px){
             display: none;
+            // opacity: 0;
+            // transition: opacity 0.6s linear;
         }  
 
         &.open{
             display: block;
             position: fixed;
             left: 0;
-            top: 108px;
+            top: 0px;
+            padding: 108px 0;
+            z-index: 0;
             width: 100%;
             height: 100vh;
+            background-image: url(/src/assets/bg.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            transition: 0.6s ease-in-out;
 
             .header__list{
                 display: block;
@@ -128,6 +140,10 @@
         margin-right: 15px;
         position: relative;
         z-index: 1;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: all .2s linear;
         @media only screen and (min-width: 768px){
             display: none;
         }
@@ -144,7 +160,22 @@
 
     &.scrolled {
         background: #2c2d44;
-        z-index: 1;
+        z-index: 2;
+        .scrolled__container{
+            &::before{
+                content: "";
+                width: calc(100% - 30px);
+                height: 1px;
+                background-color: $lineColor;
+                position: absolute;
+                left: 15px;
+                bottom: 0;
+                display: none;
+                @media only screen and (max-width: 767px){
+                    display: none;
+                }
+            }
+        }
     }
 }
 
@@ -164,14 +195,17 @@
         padding: 106px 0 52px;
         margin-bottom: 40px;
     }
+    &.hide{
+        display: none;
+    }
 
     &__container{
         @include container();
 
-        &.hide{
-            opacity: 0;
-        }
-    }
+    //     &.hide{
+    //         opacity: 0;
+    // }
+}
 
     &__title{
         @include font($mainText, center, 64px, 900, 75px);
@@ -214,6 +248,7 @@
 
 .description{
     margin-bottom: 116px;
+    scroll-margin-top: 90px;
     @media only screen and (max-width: 1024px){
         margin-bottom: 80px;
     @media only screen and (max-width: 767px){
@@ -285,6 +320,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2px;
+    scroll-margin-top: 90px;
     @media only screen and (max-width: 767px){
         grid-template-columns: repeat(2, 1fr);
     }
@@ -351,3 +387,498 @@
         }
     }
 }
+
+.customers{
+    margin-bottom: 114px;
+    scroll-margin-top: 90px;
+    @media only screen and (max-width: 1024px){
+        margin-bottom: 78px;
+    }
+    @media only screen and (max-width: 767px){
+        margin-bottom: 41px;
+    }
+
+    &__container{
+        @include container ();
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 30px;
+        @media only screen and (max-width: 1024px){
+            column-gap: 25px;
+        }
+        @media only screen and (max-width: 767px){
+            grid-template-columns: 1fr;
+            row-gap: 56px;
+        }
+    }
+
+    &__image-wrapper{
+        position: relative;
+        padding-top: 100%;
+        margin-bottom: 30px;
+        @media only screen and (max-width: 1024px){
+            margin-bottom: 25px;
+        }
+    }
+
+    &__image-mobile{
+        object-fit: cover;
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        object-position: center;
+        @media only screen and (max-width: 767px){
+            display: block;
+        }
+    }
+
+    &__image{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        object-position: center;
+        @media only screen and (max-width: 767px){
+            display: none;
+        }
+        
+    }
+
+    &__title{
+        @include font($blackText, left, 24px, 700, 28px);
+        @include font-main;
+        text-transform: capitalize;
+        margin-bottom: 6px;
+        @media only screen and (max-width: 1024px){
+            font-size: 18px;
+            line-height: 21px;
+            margin-bottom: 4px;
+        }
+    }
+
+    &__position{
+        @include font($buttonColorMain, left, 18px, 400, 21px);
+        @include font-main;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 22px;
+        }
+
+        @media only screen and (max-width: 767px){
+            margin-bottom: 38px;
+        }
+    }
+
+    &__text{
+        @include font($textColorBlackGrey, left, 18px, 400, 21px);
+        @include font-main;
+        margin-bottom: 38px;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 40px;
+        }
+        @media only screen and (max-width: 767px){
+            margin-bottom: 55px;
+        }
+    }
+
+    &__contacts{
+        display: flex;
+        justify-content: flex-start;
+        column-gap: 6px;
+    }
+
+    &__icon-wrapper{
+        display: flex;
+        cursor: pointer;
+        @media only screen and (max-width: 1024px){
+            width: 33px;
+            height: 33px;
+        }
+        @media only screen and (max-width: 767px){
+            width: 40px;
+            height: 40px;
+        }
+
+        & path{
+            transition: all .3s linear;
+        }
+
+        & rect{
+            transition: all .3s linear;
+        }
+
+        &:hover path{
+            fill: $linkActiveRed;
+        }
+
+        &:hover rect{
+            stroke: $linkActiveRed;
+        }
+        
+    }
+
+    &__icon{
+        width: 100%;
+        height: 100%;
+        transition: all .3s linear;
+    }
+}
+
+.quote{
+    margin-bottom: 132px;
+    scroll-margin-top: 90px;
+    padding-bottom: 45px;
+    @media only screen and (max-width: 1024px){
+        margin-bottom: 93px;
+        padding-bottom: 32.5px;
+    }
+    @media only screen and (max-width: 767px){
+        margin-bottom: 53px;   
+    }
+
+    &__container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        transition: all .5s ease-in-out;
+        @media only screen and (max-width: 767px){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__image-wrapper{
+        position: relative;
+    }
+
+    &__image{
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        @media only screen and (max-width: 767px){
+            position: relative;
+        }
+    }
+
+    &__text-wrapper{
+        background-color: #5C3249;
+        padding: 116px 170px 144px 129px;
+        @media only screen and (max-width: 1024px){
+            padding: 47px 104px 130px 88px;
+        }
+
+        @media only screen and (max-width: 870px){
+            padding: 41px 41px 80px;
+        }
+
+        @media only screen and (max-width: 767px){
+            padding: 23px 25px 95px 20px;
+        }
+    }
+
+    &__header{
+        @include font($mainText, left, 36px, 400, 49px);
+        @include font-secondary;
+        text-transform: capitalize;
+        font-style: italic;
+        margin-bottom: 24px;
+        @media only screen and (max-width: 1024px){
+            font-size: 24px;
+            line-height: 32px;
+        }
+        @media only screen and (max-width: 767px){
+            text-align: center;
+        }
+    }
+
+    &__text{
+        @include font($mainText, left, 13px, 700, 15px);
+        @include font-main;
+        text-transform: uppercase;
+        @media only screen and (max-width: 1024px){
+            font-size: 12px;
+            line-height: 14px;
+        }
+        @media only screen and (max-width: 767px){
+            text-align: center;
+        }
+    }
+}
+
+.swiper-pagination-bullet{
+    width: 14px;
+    height: 14px;
+    border: 1px solid #7E5D6F;
+    border-radius: 50%;
+    background-color: transparent;
+    opacity: 1;
+    @media only screen and (max-width: 1024px){
+        width: 9.5px;
+        height: 9.5px;
+    }
+
+    &:hover{
+        border: 1px solid $linkActiveRed;
+    }
+
+    &:active{
+        background-color: $linkActiveRed;
+    }
+}
+
+.swiper-pagination-bullet-active{
+    background-color: #7E5D6F;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+    margin: 0;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+    bottom: 0;
+}
+
+.swiper-pagination{
+    display: flex;
+    column-gap: 25px;
+    justify-content: center;
+}
+
+.download{
+    margin-bottom: 114px;
+    scroll-margin-top: 90px;
+    @media only screen and (max-width: 1024px){
+        margin-bottom: 78px;
+    }
+    @media only screen and (max-width: 767px){
+        margin-bottom: 45px;
+    }
+
+    &__container{
+        @include container;
+    }
+
+    &__title{
+        @include font($blackText, center, 30px, 500, 35px);
+        @include font-main;
+        text-transform: capitalize;
+        margin-bottom: 23px;
+        @media only screen and (max-width: 1024px){
+            font-size: 24px;
+            line-height: 28px;
+            margin-bottom: 20px;
+        }
+        @media only screen and (max-width: 767px){
+            font-size: 18px;
+            line-height: 21px;
+            display: block;
+            margin: 0 auto 22px;
+            max-width: 280px;
+        }
+    }
+
+    &__text{
+        @include font($blackText, center, 18px, 700, 21px);
+        @include font-main;
+        text-transform: uppercase;
+        margin-bottom: 48px;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 43px;
+        }
+        @media only screen and (max-width: 767px){
+            font-size: 13px;
+            line-height: 15px;
+            margin-bottom: 11px;
+        }
+    }
+
+    &__btn{
+        @include button;
+        @media only screen and (max-width: 767px){
+            font-size: 18px;
+            padding: 30px 17px;
+        }
+    }
+}
+
+.footer{
+    background-color: $backgroundColor;
+    padding: 71px 0 0;
+    @media only screen and (max-width: 1024px){
+        padding: 46px 0 0;
+    }
+    @media only screen and (max-width: 767px){
+        padding: 34px 0 0;
+    }
+
+    &__container{
+        @include container;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 30px;
+        margin-bottom: 71px;
+        @media only screen and (max-width: 1024px){
+            column-gap: 20px;
+            margin-bottom: 41px;
+        }
+
+        @media only screen and (max-width: 767px){
+            grid-template-columns: 1fr;
+            row-gap: 59px;
+            margin-bottom: 33px;
+        }
+    }
+
+    &__location{
+        @include font($mainText, center, 18px, 700, 21px);
+        @include font-main;
+        text-transform: uppercase;
+        margin-bottom: 29px;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 17px;
+        }
+
+        @media only screen and (max-width: 767px){
+            margin-bottom: 34px;
+        }
+    }
+
+    &__address{
+        @include font($mainText, center, 18px, 400, 21px);
+        @include font-main;
+        text-transform: capitalize;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+
+    &__share{
+        @include font($mainText, center, 18px, 700, 21px);
+        @include font-main;
+        text-transform: uppercase;
+        margin-bottom: 49px;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 32px;
+        }
+        @media only screen and (max-width: 767px){
+            margin-bottom: 36px;
+        }
+    }
+
+    &__icons{
+        display: flex;
+        justify-content: center;
+        column-gap: 27px;
+        @media only screen and (max-width: 1024px){
+            column-gap: 21px;
+        }
+        @media only screen and (max-width: 767px){
+            column-gap: 17px;
+        }
+    }
+
+    &__icon-wrapper{
+        display: flex;
+        cursor: pointer;
+        @media only screen and (max-width: 1024px){
+            max-width: 33px;
+            max-height: 33px;
+        }
+
+        & path{
+            transition: all .3s linear;
+        }
+
+        & rect{
+            transition: all .3s linear;
+        }
+
+        &:hover path{
+            fill: $linkActiveRed;
+        }
+
+        &:hover rect{
+            stroke: $linkActiveRed;
+        }
+    }
+
+    &__icon{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__about-us-title{
+        @include font($mainText, center, 18px, 700, 21px);
+        @include font-main;
+        text-transform: uppercase;
+        margin-bottom: 29px;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+            margin-bottom: 15px;
+        }
+        @media only screen and (max-width: 767px){
+            margin-bottom: 38px;
+        }
+    }
+
+    &__about-us-text{
+        @include font($mainText, center, 18px, 400, 21px);
+        @include font-main;
+        text-transform: capitalize;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+
+    &__copyright{
+        background-color: #2C3154;
+        padding: 24px 0;
+        @media only screen and (max-width: 1024px){
+            padding: 14px 0;
+        }
+        @media only screen and (max-width: 767px){
+            padding: 29px 0;
+        }
+    }
+    
+    &__copyright-text{
+        @include font($footerText, center, 18px, 400, 21px);
+        @include font-main;
+        text-transform: capitalize;
+        max-width: 370px;
+        margin: 0 auto;
+        @media only screen and (max-width: 1024px){
+            font-size: 14px;
+            line-height: 16px;
+            max-width: 314px;
+        }
+    }
+
+    &__copyright-author{
+        color: $mainText;
+    }
+}
+
+
+
+
